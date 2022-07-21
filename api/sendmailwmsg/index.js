@@ -4,10 +4,10 @@ module.exports = async function (context, req) {
     let transporter = nodemailer.createTransport({
         service: "hotmail",
         auth: {
-        //   user: process.env.EMAIL,
-        //   pass: process.env.PASSWORD,
-            user: "kffsande@outlook.com",
-            pass: "Pwd4Kff5and3"
+          user: process.env.usernam1,
+          pass: process.env.password1,
+            // user: "kffsande@outlook.com",
+            // pass: "Pwd4Kff5and3"
         },
         });
 
