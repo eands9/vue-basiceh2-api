@@ -13,10 +13,10 @@ module.exports = async function (context, req) {
         // secure: true,
         // service: "gmail",
         auth: {
-        //   user: process.env.EMAIL,
-        //   pass: process.env.PASSWORD,
-            user: "kffsande@outlook.com",
-            pass: "Pwd4Kff5and3"
+          user: process.env.username1,
+          pass: process.env.password1,
+            // user: "kffsande@outlook.com",
+            // pass: "Pwd4Kff5and3"
         },
         });
 
