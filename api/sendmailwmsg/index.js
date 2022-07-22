@@ -26,7 +26,7 @@ module.exports = async function (context, req) {
         to: "kffsande@outlook.com",
         subject: req.body.emailSubject,
         text: req.body.emailBody,
-        html: '<div><table><thead><tr><th>Product ID</th><th>Name</th></tr></thead><tbody>' + req.body.emailBody + '</tbody></table></div>',
+        html: '<div><table><thead><tr><th>Product ID</th><th>Name</th></tr></thead><tbody>' + req.body.emailBody + '<tr><td></td><td>' + req.body.orderTotal + '</td></tr></tbody></table></div>',
     }
 
     transporter.sendMail(mailOptions,(error, info)=>{
