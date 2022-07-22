@@ -6,6 +6,19 @@ const nodemailer = require("nodemailer");
 // app.use(express.json())
 
 module.exports = async function (context, req) {
+
+    const { DefaultAzureCredential } = require("@azure/identity");
+    const { SecretClient } = require("@azure/keyvault-secrets");
+    const credential = new DefaultAzureCredential();
+    const vaultName = "vue-basiceh2KV";
+    const url = `https://${vaultName}.vault.azure.net`;
+    const client = new SecretClient(url, credential);
+    
+    const userRetrievedSecret = await client.getSecret("emailusername1");
+    const emailusername1=userRetrievedSecret.value;
+    const pwdRetrievedSecret = await client.getSecret("emailusername1");
+    const password1=pwdRetrievedSecret.value;
+
     let transporter = nodemailer.createTransport({
         service: "hotmail",
         // host: "smtp.gmail.com",
@@ -13,24 +26,13 @@ module.exports = async function (context, req) {
         // secure: true,
         // service: "gmail",
         auth: {
-          user: process.env.username1,
-          pass: process.env.password1,
+          user: emailusername1,
+          pass: password1,
             // user: "kffsande@outlook.com",
             // pass: "Pwd4Kff5and3"
         },
         });
 
-    //   let mailIDs = await getMailIDs();
-    //   for (i = 0; i < mailIDs.length; i++) {
-    //     await transporter.sendMail({
-    //       from: "abc@gmail.com",
-    //       to: `${mailIDs[i]}`,
-    //       subject: "Test Mail",
-    //       text: {
-    //         path: `emailBody.txt`,
-    //       },
-    //     });
-    //   }
 
         const mailOptions = {
             from: "kffsande@outlook.com",
