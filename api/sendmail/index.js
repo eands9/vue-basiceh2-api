@@ -16,6 +16,7 @@ module.exports = async function (context, req) {
     
     const userRetrievedSecret = await client.getSecret("emailusername1");
     const emailusername1=userRetrievedSecret.value;
+    console.log(emailusername1)
     const pwdRetrievedSecret = await client.getSecret("emailusername1");
     const password1=pwdRetrievedSecret.value;
 
