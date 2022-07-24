@@ -40,7 +40,7 @@ module.exports = async function (context, req) {
             from: "kffsande@outlook.com",
             to: "kffsande@outlook.com",
             // subject: req.body.name + "'s order is shown below...",
-            subject: "Test Subject 9",
+            subject: "Test Subject 10 from vuenodemailer2",
             text: "Wow! That's Easy"
         }
 

@@ -25,7 +25,7 @@ module.exports = async function (context, req) {
         from: "kffsande@outlook.com",
         to: "kffsande@outlook.com",
         subject: req.body.emailSubject,
-        text: req.body.emailBody,
+        text: "From vuenodemailer " + req.body.emailBody,
         html: '<div><table><thead><tr><th>Product ID</th><th>Name</th></tr></thead><tbody>' + req.body.emailBody + '<tr><td></td><td>$' + req.body.orderTotal + '</td></tr></tbody></table></div>',
     }
 
